@@ -1,5 +1,6 @@
 import "./navbar.css"
 import logo from './logo-bever.png';
+import CartWidget from "../CartWidget";
 
 function Navbar (){
     return(
@@ -10,7 +11,7 @@ function Navbar (){
                 <li> <a href="#">PRODUCTOS</a></li>
                 <li> <a href="#">CAMPAÑA 2022</a></li>
                 <li> <a href="#">CONTACTO</a></li>
-                <li> <a href="#">CARRITO</a></li>
+                <li> <a href="#"><CartWidget/></a></li>
             </ul>
         </nav>
     );
