@@ -1,27 +1,31 @@
 import CardProducto from "./Card";
 import "./ItemListContainer.css"
+import imagen1 from "./imgProductos/remera1.jpg"
+import imagen2 from "./imgProductos/remera2.jpg"
+import imagen3 from "./imgProductos/remera3.jpg"
 
-function ItemListContainer(){
+function ItemListContainer(props){
+  let {greeting} = props
   return (
     <div>
-      <h1>¡Bienvenido!</h1>
+      <h1>{greeting}</h1>
       <div className="mainContainer">
       <CardProducto
       product= "Remera"
       price={2500}
-      img="../imgProductos/remera1.jpg"
+      img={imagen1}
       alt="Remera"
       />
       <CardProducto
       product= "Camisa"
       price={3500}
-      img="../imgProductos/remera2.jpg"
+      img={imagen2}
       alt="camisa"
       />
       <CardProducto
       product= "Remera"
       price={2500}
-      img="../imgProductos/remera3.jpg"
+      img={imagen3}
       alt="remera"
       />
       </div>
