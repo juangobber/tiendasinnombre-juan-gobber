@@ -3,9 +3,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+import ItemCount from "./itemCount/ItemCount";
 
 function CardProducto(props) {
-    let {img, product, price, alt} = props;
+    let {img, product, price, alt, stock, limite, initial} = props;
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
@@ -26,6 +27,11 @@ function CardProducto(props) {
 
         </CardContent>
       </CardActionArea>
+      <ItemCount
+      stock = {stock}
+      limite = {limite}
+      initial = {initial}
+      />
       <CardActions>
         <Button size="medium" color="primary">
           AÑADIR AL CARRITO
