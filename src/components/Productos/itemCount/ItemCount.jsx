@@ -9,12 +9,20 @@ let productStock = stock;
 let productLimit = limite;   
 
 function Add(){
-    setCounter(counter+1)
+    if ((productStock > 0) && (counter < stock)){
+        setCounter(counter+1)
+        productStock= productStock - 1;
+    }
+    
     
 }
 
 function Substract(){
-    setCounter(counter-1);
+    if (counter > 1) {
+        setCounter(counter-1);
+        productStock = productStock + 1;
+    }
+  
 }
 
 function AgregarAlCarrito(){
@@ -23,7 +31,7 @@ function AgregarAlCarrito(){
 
 return (
         <div>
-            <button disabled={counter<= 1} onClick={Substract}>-</button><span>{counter}</span><button disabled= {(counter >= productStock)||counter>= productLimit} onClick={Add}>+</button>
+            <button onClick={Substract}>-</button><span>{counter}</span><button onClick={Add}>+</button>
             <div>
             <Button size="medium" color="primary" onClick={AgregarAlCarrito}>
             AÑADIR AL CARRITO
