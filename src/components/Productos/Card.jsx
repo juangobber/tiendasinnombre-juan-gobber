@@ -7,6 +7,11 @@ import ItemCount from "./itemCount/ItemCount";
 
 function CardProducto(props) {
     let {img, product, price, alt, stock, limite, initial} = props;
+
+    let onAdd = function (cantidad){
+      alert(`Añadiste ${cantidad} ${props.product} al carrito`)
+    }
+
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
@@ -29,13 +34,11 @@ function CardProducto(props) {
       </CardActionArea>
       <ItemCount
       stock = {stock}
-      limite = {limite}
       initial = {initial}
+      onAdd = {onAdd}
       />
       <CardActions>
-        <Button size="medium" color="primary">
-          AÑADIR AL CARRITO
-        </Button>
+
       </CardActions>
     </Card>
   );
