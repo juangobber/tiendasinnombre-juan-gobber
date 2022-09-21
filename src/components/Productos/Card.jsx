@@ -6,7 +6,7 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 import ItemCount from "./itemCount/ItemCount";
 
 function CardProducto(props) {
-    let {img, product, price, alt, stock, limite, initial} = props;
+    let {img, product, price, alt, stock, initial} = props;
 
     let onAdd = function (cantidad){
       alert(`Añadiste ${cantidad} ${props.product} al carrito`)

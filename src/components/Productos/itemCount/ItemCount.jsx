@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { Button} from '@mui/material';
 
 function ItemCount (props) {
 let {stock, initial, limite, onAdd} = props;
