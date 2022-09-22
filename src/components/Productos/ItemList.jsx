@@ -1,33 +1,27 @@
-import React, {useState, useEffect} from "react";
-import CardProducto from "./Card";
-import  getItems  from "../../services/mockAPI";
+import React from "react";
+import Item from "./Item";
 
 
 
-function ItemList(){
-    let [data, setData] = useState([]);
-    useEffect(()=> {
-        console.log("prueba useEffect")
-        getItems().then( (respuestaDatos) => {setData(respuestaDatos)
-        });
-      },[]);
-    
-      return(        
-            data.map((item)=>{
-            console.log(item.img)
-                return <CardProducto
-                key= {item.id}
-                product= {item.product}
-                price= {item.price}
-                img= {item.img}
-                alt={item.product}
+function ItemList(props){
+   let listadoProductos = props.items
+
+    return(
+        listadoProductos.map( (item) => {
+            return (
+                <Item
+                key = {item.id}
+                img = {item.img}
+                product = {item.product}
+                price = {item.price}
                 stock = {item.stock}
-                initial ={1}
-            />
-            })
-      )
+                initial = {1}
+                alt = {item.product}
+                />
+            )
         
-    
+        })
+    ) 
 }
 
 export default ItemList

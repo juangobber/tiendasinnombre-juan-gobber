@@ -5,9 +5,9 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import ItemCount from "./itemCount/ItemCount";
 
-function CardProducto(props) {
+function Item(props) {
     let {img, product, price, alt, stock, initial} = props;
-
+    console.log(props)
     let onAdd = function (cantidad){
       alert(`Añadiste ${cantidad} ${props.product} al carrito`)
     }
@@ -44,4 +44,4 @@ function CardProducto(props) {
   );
 }
 
-export default CardProducto
+export default Item
