@@ -9,6 +9,7 @@ function ItemList(props){
     return(
         listadoProductos.map( (item) => {
             return (
+                <div className="itemContainer">
                 <Item
                 key = {item.id}
                 img = {item.img}
@@ -18,6 +19,7 @@ function ItemList(props){
                 initial = {1}
                 alt = {item.product}
                 />
+                </div>
             )
         
         })

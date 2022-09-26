@@ -4,4 +4,9 @@
     justify-content: space-around;
     align-items: center;
     margin-top: 3rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+.itemContainer{
+    margin: 2rem;
 }

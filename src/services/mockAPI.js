@@ -5,6 +5,7 @@ const data = [
     product : "Remera Kanji", 
     price : 3500, 
     stock : 10,
+    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris"
 },
 {
     id:2,
@@ -12,6 +13,7 @@ const data = [
     product : "Remera Crisp", 
     price : 3500, 
     stock : 10,
+    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris"
 },
 {
     id:3,
@@ -19,6 +21,7 @@ const data = [
     product : "Remera Aputure", 
     price : 2500, 
     stock : 10,
+    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris"
 },
 {
     id:4,
@@ -26,6 +29,7 @@ const data = [
     product : "Remera Concept", 
     price : 3000, 
     stock : 10,
+    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris"
 },
 {
     id:5,
@@ -33,6 +37,7 @@ const data = [
     product : "Remera Membrecy", 
     price : 2580, 
     stock : 10,
+    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris"
 },
 {
     id:6,
@@ -40,8 +45,10 @@ const data = [
     product : "Remera Lowel", 
     price : 3600, 
     stock : 10,
+    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris"
 },
 ];
+
 
 export default function getItems ( ){
 
@@ -53,3 +60,11 @@ export default function getItems ( ){
     })
   }
   
+export   function getItem(){
+    return new Promise ((resolve, reject)=>{
+        setTimeout(()=>{
+           resolve(data[1]);
+        }, 3000)
+       
+      })
+  }
