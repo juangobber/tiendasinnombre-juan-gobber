@@ -14,7 +14,11 @@ useEffect(()=> {
 
   return (
     <ItemDetail
-    info = {data}/>
+    price = {data.price}
+    product = {data.product}
+    img = {data.img}
+    description = {data.description}
+    />
   )
 }
 
