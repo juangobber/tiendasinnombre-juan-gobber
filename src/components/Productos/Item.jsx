@@ -3,21 +3,19 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
-import ItemCount from "./itemCount/ItemCount";
+import {Link} from "react-router-dom"
 
 function Item(props) {
-    let {img, product, price, alt, stock, initial} = props;
-    console.log(props)
-    let onAdd = function (cantidad){
-      alert(`Añadiste ${cantidad} ${props.product} al carrito`)
-    }
+  let {img, product, price, alt, id} = props;
+  console.log(id)
+  const urlDetalle = `/item/${id}`
 
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="250"
+          height="350"
           width="280"
           image={img}
           alt={alt}
@@ -32,13 +30,14 @@ function Item(props) {
 
         </CardContent>
       </CardActionArea>
-      <ItemCount
-      stock = {stock}
-      initial = {initial}
-      onAdd = {onAdd}
-      />
-      <CardActions>
 
+      <Link to= {urlDetalle}>
+        <Button size="medium" color="primary">
+          ver más
+        </Button>
+      </Link>
+      <CardActions>
+      
       </CardActions>
     </Card>
   );

@@ -1,16 +1,17 @@
 import "./navbar.css"
 import logo from './logo-bever.png';
 import CartWidget from "../CartWidget";
+import {Link} from "react-router-dom"
 
 function Navbar (){
     return(
         <nav className="menu">
-            <div> <img src={logo} alt="logo" width="200" className="logo-header"/>
+            <div> <Link to="/"><img src={logo} alt="logo" width="200" className="logo-header"/></Link>
             </div>
             <ul className="botones-nav">
-                <li> <a href="#">PRODUCTOS</a></li>
-                <li> <a href="#">CAMPAÑA 2022</a></li>
-                <li> <a href="#">CONTACTO</a></li>
+                <li> <Link to="/">HOME</Link></li>
+                <li> <Link to="/categoria/remeras">REMERAS</Link></li>
+                <li> <Link to="/categoria/pantalones">PANTALONES</Link></li>
                 <li> <a href="#"><CartWidget/></a></li>
             </ul>
         </nav>

@@ -5,7 +5,8 @@ const data = [
     product : "Remera Kanji", 
     price : 3500, 
     stock : 10,
-    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris"
+    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris",
+    category: "remeras"
 },
 {
     id:2,
@@ -13,7 +14,8 @@ const data = [
     product : "Remera Crisp", 
     price : 3500, 
     stock : 10,
-    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris"
+    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris",
+    category: "remeras"
 },
 {
     id:3,
@@ -21,7 +23,8 @@ const data = [
     product : "Remera Aputure", 
     price : 2500, 
     stock : 10,
-    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris"
+    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris",
+    category: "remeras"
 },
 {
     id:4,
@@ -29,7 +32,8 @@ const data = [
     product : "Remera Concept", 
     price : 3000, 
     stock : 10,
-    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris"
+    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris",
+    category: "remeras"
 },
 {
     id:5,
@@ -37,7 +41,8 @@ const data = [
     product : "Remera Membrecy", 
     price : 2580, 
     stock : 10,
-    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris"
+    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris",
+    category: "remeras"
 },
 {
     id:6,
@@ -45,7 +50,35 @@ const data = [
     product : "Remera Lowel", 
     price : 3600, 
     stock : 10,
-    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris"
+    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris",
+    category: "remeras"
+},
+{
+    id:7,
+    img :"https://www.kvnstatic.com/foto-prod/07699000/g/07699000.webp", 
+    product : "Jean Static", 
+    price : 3600, 
+    stock : 10,
+    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris",
+    category: "pantalones"
+},
+{
+    id:8,
+    img :"https://www.kvnstatic.com/foto-prod/0766130S/g/0766130S.webp", 
+    product : "Jean Cosqui", 
+    price : 3600, 
+    stock : 10,
+    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris",
+    category: "pantalones"
+},
+{
+    id:9,
+    img :"https://www.kvnstatic.com/foto-prod/076E527V/g/076E527V_1.webp", 
+    product : "Jean Casil", 
+    price : 3600, 
+    stock : 10,
+    description: "Una clasica remera de algodón de alta calidad. Disponible en blanco, negro y gris",
+    category: "pantalones"
 },
 ];
 
@@ -55,16 +88,34 @@ export default function getItems ( ){
     return new Promise ((resolve, reject)=>{
       setTimeout(()=>{
          resolve(data);
-      }, 3000)
+      }, 1500)
      
     })
   }
   
-export   function getItem(){
+export   function getItem(idItem){
     return new Promise ((resolve, reject)=>{
         setTimeout(()=>{
-           resolve(data[1]);
-        }, 3000)
-       
+            let itemFind = data.find((item) => {
+                return item.id === Number(idItem)
+            });
+            if (itemFind) resolve (itemFind);
+            else reject (new Error("Item no encontrado"))
+        }, 1500) 
       })
+  }
+
+  export function getItemsByCategory (cat){
+
+    return new Promise ((resolve, reject)=>{
+        let itemFind = data.filter((item) => {
+            return item.category === cat;
+        });
+        setTimeout(()=>{
+            console.log("encontramos",itemFind)
+            if (itemFind) resolve (itemFind);
+            else reject (new Error("Item no encontrado"))
+
+        }, 1500)
+    })
   }

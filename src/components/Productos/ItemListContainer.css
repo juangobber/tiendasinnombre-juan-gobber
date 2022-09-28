@@ -1,12 +1,18 @@
 .mainContainer{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     margin-top: 3rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
 }
 .itemContainer{
     margin: 2rem;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 4fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(30rem, auto);
 }

@@ -2,19 +2,20 @@ import React from "react";
 import { Button} from '@mui/material';
 
 function ItemCount (props) {
-let {stock, initial, limite, onAdd} = props;
+let {stock, initial, limite, product} = props;
 
 const  [counter, setCounter] = React.useState(initial)
-let productStock = stock; 
-let productLimit = limite;   
+let productStock = stock;   
+
+let onAdd = function (){
+    alert(`Añadiste ${counter} ${product} al carrito`)
+}
 
 function Add(){
     if ((productStock > 0) && (counter < stock)){
         setCounter(counter+1)
         productStock= productStock - 1;
-    }
-    
-    
+    }   
 }
 
 function Substract(){
@@ -22,23 +23,17 @@ function Substract(){
         setCounter(counter-1);
         productStock = productStock + 1;
     }
-  
-}
-
-function AgregarAlCarrito(){
-    onAdd (counter)
 }
 
 return (
         <div>
             <button onClick={Substract}>-</button><span>{counter}</span><button onClick={Add}>+</button>
             <div>
-            <Button size="medium" color="primary" onClick={AgregarAlCarrito}>
-            AÑADIR AL CARRITO
-            </Button>
+                <Button size="medium" color="primary" onClick={onAdd}>
+                AÑADIR AL CARRITO
+                </Button>
             </div>
         </div>
-        
     )
 }
 
