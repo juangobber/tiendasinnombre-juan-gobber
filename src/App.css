@@ -36,6 +36,15 @@
   color: #61dafb;
 }
 
+.link{
+  text-decoration: none;
+  color: white;
+  background-color: rgb(43, 43, 43);
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bolder;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
