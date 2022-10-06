@@ -1,17 +1,22 @@
-import React, {useState} from 'react'
+import React, {useContext} from 'react'
 import ItemCount from  '../itemCount/ItemCount'
 import { Button} from '@mui/material';
 import {Link} from "react-router-dom"
+// importo el hook y el cartContext
+import {cartCtx} from "../context/CartContext"
 
 function ItemDetail(props) {
    let {price, img, product, description, stock, initial} = props
     console.log(initial)
     
+    const {addItem} = useContext(cartCtx)
+    
     const  [estadoCart, setEstadoCart] = React.useState(true)
 
 
     let HandleAddToCart = function (counter, producto){
-      alert(`Añadiste al carrito ${counter} ${producto}`)
+      addItem(props, counter)
+      
       setEstadoCart(false);
     }
 
