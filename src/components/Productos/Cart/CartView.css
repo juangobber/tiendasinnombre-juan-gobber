@@ -1,0 +1,64 @@
+*{
+	list-style: none;
+	text-decoration: none;
+    box-sizing: border-box;
+}
+.CartContainer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 1200px;
+    align-content: center;
+
+    
+}
+
+.CartItem {
+    display: flex;
+    margin: auto;
+    align-items:center;
+    align-content: center;
+    
+    
+}
+
+.CartItemImg{
+    display: flex;
+    align-content: center;
+    width: 15rem;
+}
+
+.img {
+    width: 10rem
+}
+
+.CartItemDescription{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    width: 20rem;
+    height: 150px;
+
+    }
+.CartItemPrice{
+    display: flex;
+    align-self: flex-end;
+}
+
+.ProductName{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.CartItemTotalPrice{
+    display: flex;
+    align-self: flex-end;
+    margin-right: 1rem;
+}
+.bold{
+    font-weight: bolder;
+}
