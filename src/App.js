@@ -7,7 +7,10 @@ import CartView from './components/Productos/Cart/CartView';
 //importar provider
 import CartContextProvider from './components/Productos/context/CartContext';
 
+
+
 function App() {
+
   return (
     <CartContextProvider>
     <BrowserRouter>
