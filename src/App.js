@@ -2,10 +2,12 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import ItemDetailContainer from './components/Productos/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './components/Productos/ItemListContainer';
-import {BrowserRouter, Routes, Route, Link} from "react-router-dom"
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 import CartView from './components/Productos/Cart/CartView';
+import Checkout from './components/Checkout/Checkout';
 //importar provider
 import CartContextProvider from './components/Productos/context/CartContext';
+
 
 
 
@@ -28,6 +30,9 @@ function App() {
           }/>
           <Route path="/cart" element={
             <CartView/>
+          }/>
+          <Route path="/checkout/:idcheckout" element={
+            <Checkout/>
           }/>
         </Routes>
         

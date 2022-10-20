@@ -2,17 +2,14 @@ import React from "react";
 import {useContext} from "react"
 import {cartCtx} from "../context/CartContext"
 import { Button} from '@mui/material';
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import "./CartView.css"
+import { createBuyOrder } from "../../../services/firestore";
 
 //Imports de MUI
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
 import Divider from '@mui/material/Divider';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Avatar from '@mui/material/Avatar';
-import Typography from '@mui/material/Typography';
+
+
 
 
 
@@ -21,7 +18,23 @@ function CartView() {
     const context = useContext(cartCtx)
     const { cart, getTotalItemsInCart, deleteItem, deleteCart, getTotalPrice} = context;
    
-   
+    const navigate = useNavigate()
+
+    function handleCheckout(){
+        const orderData = {
+            buyer: {
+                name: "Juan Manuel",
+                email: "juanmanuel@juan.com",
+                phone: "034855555"
+            },
+            items: cart,
+            total: getTotalPrice()
+        }
+        createBuyOrder(orderData).then(orderid => {
+            navigate(`/checkout/${orderid}`)
+        })
+    }
+
     return(
         cart.length === 0 ? 
         <div>
@@ -53,6 +66,7 @@ function CartView() {
             <div>
                 <h2>TOTAL: ${getTotalPrice()}</h2>
                 <Button onClick={deleteCart}> VACIAR CARRITO </Button>
+                <Button onClick={handleCheckout}> FINALIZAR COMPRA </Button>
             </div>
         </div>
         
