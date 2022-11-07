@@ -7,6 +7,7 @@ import CartView from './components/Productos/Cart/CartView';
 import Checkout from './components/Checkout/Checkout';
 //importar provider
 import CartContextProvider from './components/Productos/context/CartContext';
+import CostumerForm from './components/Productos/CostumerForm/CostumerForm';
 
 
 
@@ -33,6 +34,9 @@ function App() {
           }/>
           <Route path="/checkout/:idcheckout" element={
             <Checkout/>
+          }/>
+          <Route path="/costumer-form" element={
+            <CostumerForm/>
           }/>
         </Routes>
         

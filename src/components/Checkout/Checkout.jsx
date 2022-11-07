@@ -4,8 +4,7 @@ import { Button} from '@mui/material';
 
 
 function Checkout() {
-    const idParam = useParams()
-    console.log("param", idParam)
+  const idParam = useParams()
   return (
      <div>
 

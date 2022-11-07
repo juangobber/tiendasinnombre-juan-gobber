@@ -7,7 +7,6 @@ import {Link} from "react-router-dom"
 
 function Item(props) {
   let {img, product, price, alt, id} = props;
-  console.log(id)
   const urlDetalle = `/item/${id}`
 
   return (
@@ -36,9 +35,6 @@ function Item(props) {
           ver más
         </Button>
       </Link>
-      <CardActions>
-      
-      </CardActions>
     </Card>
   );
 }

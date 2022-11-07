@@ -5,12 +5,21 @@ import { cartCtx } from "./Productos/context/CartContext";
 
 function CartWidget() {
     const {getTotalItemsInCart} = useContext(cartCtx)
+    
+    
+
     return(
+        getTotalItemsInCart() === 0 ? 
+        <div>
+        <FontAwesomeIcon icon={ faCartShopping } />
+        </div>
+        :
         <div>
         <FontAwesomeIcon icon={ faCartShopping } />
         <span>{getTotalItemsInCart()}</span>
         </div>
     )
+    
 }
 
 export default CartWidget;

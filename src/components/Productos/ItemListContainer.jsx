@@ -8,7 +8,6 @@ import {useParams} from "react-router-dom"
 function ItemListContainer(props){
   let {greeting} = props
   const {cat} = useParams();
-  console.log("holanda",useParams())
   let [data, setData] = useState([]);
   
   useEffect(()=> {
@@ -20,14 +19,24 @@ function ItemListContainer(props){
       }
     },[cat]);
 
-  return (
-    <div>
-      <h1>{greeting}</h1>
-      <div className="mainContainer wrapper">    
-        <ItemList items={data} />
-      </div>
-    </div>
-  );
+      if (data.length === 0){
+        return (
+          <div>
+            <h1>{greeting}</h1>
+            <h2>CARGANDO PRODUCTOS...</h2>
+          </div>
+        );
+      } else {
+        return (
+          <div>
+            <h1>{greeting}</h1>
+            <div className="mainContainer wrapper">    
+              <ItemList items={data} />
+            </div>
+          </div>
+        );
+      }
+  
 }
 
 export default ItemListContainer
